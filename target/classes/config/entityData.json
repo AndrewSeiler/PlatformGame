@@ -1,0 +1,17 @@
+{
+    "PLAYER": {
+        "velocityX": 0.0,
+        "velocityY": 0.0,
+        "velocityXMax": 3.0,
+        "velocityYMax": 10.0,
+        "accelerationX": 0.0,
+        "accelerationY": 0.0,
+        "accelerationXDefault": 0.4,
+        "accelerationYDefault": 4.0,
+        "width": 16,
+        "height": 32,
+        "mass": 1.0,
+        "aiType": 1,
+        "texture": "player.png"
+    }
+}

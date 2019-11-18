@@ -1,0 +1,8 @@
+{
+    "velocityXMax": 8,
+    "velocityYMax": 16,
+    "width": 16,
+    "height": 32,
+    "mass": 1,
+    "texture": "player.png"
+}

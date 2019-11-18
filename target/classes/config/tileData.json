@@ -1,0 +1,25 @@
+{
+    "AIR": {
+        "width": 16,
+        "height": 16,
+        "solid": false,
+        "texture": "air.png",
+        "other": []
+    },
+    "GROUND": {
+        "width": 16,
+        "height": 16,
+        "solid": true,
+        "texture": "ground.png",
+        "other": []
+    },
+    "GOAL": {
+        "width": 16,
+        "height": 16,
+        "solid": false,
+        "texture": "goal.png",
+        "other": [
+            "goal"
+        ]
+    }
+}

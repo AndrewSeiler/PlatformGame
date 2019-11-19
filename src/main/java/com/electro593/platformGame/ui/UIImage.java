@@ -1,8 +1,8 @@
 package com.electro593.platformGame.ui;
 
 import java.awt.Graphics;
+import java.util.Map;
 
-import com.electro593.platformGame.Defines;
 import com.electro593.platformGame.TextureCache;
 
 public class UIImage extends UIFrame
@@ -20,16 +20,13 @@ public class UIImage extends UIFrame
     private double accelY;
     private int width;
     private int height;
+    private Map<String, String> attributes;
     private String textureMapKey;
     
-    public UIImage() { this(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, Defines.NULLTYPE); }
-    public UIImage(double posX, double posY, int width, int height, String textureMapKey)
-    {
-        this(posX, posY, 0, 0, 0, 0, 0, 0, width, height, Defines.NULLTYPE);
-    }
     public UIImage(double posX, double posY, double velX, double velY, double velXMax, double velYMax, double accelX, double accelY,
-                   int width, int height, String textureMapKey)
+                   int width, int height, String textureMapKey, Map<String, String> attributes)
     {
+        super(posX, posY, velX, velY, velXMax, velYMax, accelX, accelY, width, height, null, attributes, null);
         setPosX(posX);
         setPosY(posY);
         setVelX(velX);
@@ -41,6 +38,7 @@ public class UIImage extends UIFrame
         setWidth(width);
         setHeight(height);
         setTextureMapKey(textureMapKey);
+        setAttributes(attributes);
         prevPosX = posX;
         prevPosY = posY;
     }
@@ -103,5 +101,7 @@ public class UIImage extends UIFrame
     
     public String getTextureMapKey() { return textureMapKey; }
     public void setTextureMapKey(String textureMapKey) { this.textureMapKey = textureMapKey; }
+    
+    public void setAttributes(Map<String, String> attributes) { this.attributes = attributes; }
     
 }

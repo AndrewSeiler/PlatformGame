@@ -19,7 +19,7 @@ public class KeyEvent implements KeyListener
     {
         keyMap = new HashMap<Integer, Boolean>();
         keyNameMap = new HashMap<String, Integer>();
-        JSONObject controls = JSONReader.read(Defines.JSON_CONTROLS);
+        JSONObject controls = (JSONObject)JSONReader.read(Defines.JSON_CONTROLS);
         for (Iterator<?> iterator = controls.keySet().iterator(); iterator.hasNext();)
         {
             Object next = iterator.next();

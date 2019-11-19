@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
@@ -15,7 +14,7 @@ public class JSONReader
     
     private static JSONParser parser = new JSONParser();
     
-    public static JSONObject read(String path)
+    public static Object read(String path)
     {
         String pathStr = Defines.RESOURCES + path;
         try
@@ -27,9 +26,8 @@ public class JSONReader
                 return read(path);
             }
             FileReader reader = new FileReader(pathStr);
-            JSONObject data = (JSONObject)parser.parse(reader);
             reader.close();
-            return data;
+            return parser.parse(reader);
         }
         catch (IOException e)
         {

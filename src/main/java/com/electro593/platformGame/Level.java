@@ -28,9 +28,9 @@ public class Level
     
     public void loadLevel(String filename)
     {
-        JSONObject levelData = JSONReader.read(Defines.JSON_LEVEL + filename);
-        JSONObject tileData = JSONReader.read(Defines.JSON_TILE);
-        JSONObject entityData = JSONReader.read(Defines.JSON_ENTITY);
+        JSONObject levelData = (JSONObject)JSONReader.read(Defines.JSON_LEVEL + filename);
+        JSONObject tileData = (JSONObject)JSONReader.read(Defines.JSON_TILE);
+        JSONObject entityData = (JSONObject)JSONReader.read(Defines.JSON_ENTITY);
         
         JSONObject settings = (JSONObject)levelData.get(Defines.JSON_LEVEL_SETTINGS);
         totalWidth = (int)(long)settings.get(Defines.JSON_LEVEL_SETTINGS_LEVELWIDTH);

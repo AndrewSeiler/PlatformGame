@@ -50,6 +50,33 @@ public class Defines
     public static final String JSON_CONTROLS_MOVELEFT = "moveLeft";                // Integer value for ASCII key press, movement left
     public static final String JSON_CONTROLS_MOVERIGHT = "moveRight";              // Integer value for ASCII key press, movement right
     
+    public static final String JSON_UI = "config/ui.json";
+    public static final String JSON_UI_POSX = "x"; // Integer
+    public static final String JSON_UI_POSY = "y"; // Integer
+    public static final String JSON_UI_VELX = "velocityX"; // Double
+    public static final String JSON_UI_VELY = "velocityY"; // Double
+    public static final String JSON_UI_VELXMAX = "velocityXMax"; // Double
+    public static final String JSON_UI_VELYMAX = "velocityYMax"; // Double
+    public static final String JSON_UI_ACCELX = "accelerationX"; // Double
+    public static final String JSON_UI_ACCELY = "accelerationY"; // Double
+    public static final String JSON_UI_WIDTH = "width"; // Integer
+    public static final String JSON_UI_HEIGHT = "height"; // Integer
+    public static final String JSON_UI_TYPE = "type"; // String
+    public static final String JSON_UI_COLOR = "color"; // JSONArray<Double>
+    public static final String JSON_UI_TEXT = "text"; // String
+    public static final String JSON_UI_ATTRIBUTES = "other"; // JSONArray<JSONObject>
+    public static final String JSON_UI_SUBELEMENTS = "elements"; // JSONArray<JSONObject>
+    public static final String JSON_UI_FONT = "font"; // String
+    public static final String JSON_UI_FONT_SIZE = "size"; // Integer
+    public static final String JSON_UI_FONT_TYPE = "type"; // String
+    public static final String JSON_UI_TEXTURE = "texture"; // String
+    
+    public static final String UI_TYPE_FRAME = "frame";
+    public static final String UI_TYPE_IMAGE = "image";
+    public static final String UI_TYPE_TEXT = "text";
+    
+  //public static final String  = ""; // 
+    
     public static final String TEXTURE_TILES = "textures/tiles/";                  // Path location for tile texture files
     public static final String TEXTURE_ENTITIES = "textures/entities/";            // Path location for entity texture files
     

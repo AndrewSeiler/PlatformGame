@@ -1,7 +1,7 @@
 package com.electro593.platformGame.ui;
 
-import com.electro593.platformGame.Defines;
 import java.awt.Graphics;
+import java.util.Map;
 import java.awt.Color;
 import java.awt.Font;
 
@@ -23,19 +23,12 @@ public class UIString extends UIFrame
     private Color color;
     private String text;
     private Font font;
+    private Map<String, String> attributes;
     
-    public UIString() { this(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, Color.BLACK, "", Defines.DEFUALT_FONT); }
-    public UIString(double posX, double posY, int width, int height, String text)
-    {
-        this(posX, posY, 0, 0, 0, 0, 0, 0, width, height, Color.BLACK, text, Defines.DEFUALT_FONT);
-    }
-    public UIString(double posX, double posY, int width, int height, Color color, String text, Font font)
-    {
-        this(posX, posY, 0, 0, 0, 0, 0, 0, width, height, color, text, font);
-    }
     public UIString(double posX, double posY, double velX, double velY, double velXMax, double velYMax, double accelX, double accelY,
-                    int width, int height, Color color, String text, Font font)
+                    int width, int height, Color color, String text, Font font, Map<String, String> attributes)
     {
+        super(posX, posY, velX, velY, velXMax, velYMax, accelX, accelY, width, height, null, attributes, null);
         setPosX(posX);
         setPosY(posY);
         setVelX(velX);
@@ -49,6 +42,7 @@ public class UIString extends UIFrame
         setColor(color);
         setText(text);
         setFont(font);
+        setAttributes(attributes);
         prevPosX = posX;
         prevPosY = posY;
     }
@@ -116,5 +110,7 @@ public class UIString extends UIFrame
     
     public Font getFont() { return font; }
     public void setFont(Font font) { this.font = font; }
+    
+    public void setAttributes(Map<String, String> attributes) { this.attributes = attributes; }
     
 }

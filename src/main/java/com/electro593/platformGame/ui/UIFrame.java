@@ -2,8 +2,8 @@ package com.electro593.platformGame.ui;
 
 import java.awt.Graphics;
 import java.awt.Color;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class UIFrame
 {
@@ -21,19 +21,11 @@ public class UIFrame
     private int width;
     private int height;
     private Color background;
+    private Map<String, String> attributes;
     private List<UIFrame> elements;
     
-    public UIFrame() { this(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, new Color(0f, 0f, 0f, 0f)); }
-    public UIFrame(double posX, double posY, int width, int height)
-    {
-        this(posX, posY, 0, 0, 0, 0, 0, 0, width, height, new Color(0f, 0f, 0f, 0f));
-    }
-    public UIFrame(double posX, double posY, int width, int height, Color background)
-    {
-        this(posX, posY, 0, 0, 0, 0, 0, 0, width, height, background);
-    }
     public UIFrame(double posX, double posY, double velX, double velY, double velXMax, double velYMax, double accelX, double accelY,
-                   int width, int height, Color background)
+                   int width, int height, Color background, Map<String, String> attributes, List<UIFrame> elements)
     {
         setPosX(posX);
         setPosY(posY);
@@ -46,9 +38,10 @@ public class UIFrame
         setWidth(width);
         setHeight(height);
         setBackground(background);
+        setAttributes(attributes);
+        setElements(elements);
         prevPosX = posX;
         prevPosY = posY;
-        elements = new ArrayList<UIFrame>();
     }
     
     public void update()
@@ -80,8 +73,11 @@ public class UIFrame
             element.paint(g, step);
     }
     
-    public void add(UIFrame uiFrame) { elements.add(uiFrame); }
+    public void setElements(List<UIFrame> elements) { this.elements = elements; }
     public void updateElement(UIFrame prev, UIFrame uiFrame) { elements.set(elements.indexOf(prev), uiFrame); }
+    
+    public Map<String, String> getAttributes() { return attributes; }
+    public void setAttributes(Map<String, String> attributes) { this.attributes = attributes; }
     
     public double getPosX() { return posX; }
     public void setPosX(double posX) { this.posX = posX; }
